@@ -19,7 +19,7 @@ StartService () {
     echo "$ramdisk is already mounted."
   else
     # create disk
-    diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nobrowse -nomount ram://$rdsize`
+    diskutil erasevolume HFS+ "RAMD" `hdiutil attach -nobrowse -nomount ram://$rdsize`
   fi
 }
 
@@ -39,11 +39,11 @@ RestartService () {
     # eject disk
     hdiutil detach $ramdisk
     # create disk
-    diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nobrowse -nomount ram://$rdsize`
+    diskutil erasevolume HFS+ "RAMD" `hdiutil attach -nobrowse -nomount ram://$rdsize`
   else
     echo "$ramdisk is not mounted"
     # create disk
-    diskutil erasevolume HFS+ "ramdisk" `hdiutil attach -nobrowse -nomount ram://$rdsize`
+    diskutil erasevolume HFS+ "RAMD" `hdiutil attach -nobrowse -nomount ram://$rdsize`
   fi
 }
 
